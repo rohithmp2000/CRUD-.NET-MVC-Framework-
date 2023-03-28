@@ -21,10 +21,13 @@
             <td>@i.prdt_name</td>
             <td>@i.prdt_price</td>
             <td>@i.prdt_qty</td>
-            <td><img scr="~/content/images/@i.prdt_img" alt="@i.prdt_name" width="100" height="120" /></td>
-            <td>@Html.ActionLink("Edit", "Edit", "Product", new { @id = i.prdt_id}, new { htmlAttributes = new { @class = "btn btn-warning" } })</td>
+            <td><div>
+                <img src="~/Content/Images/@i.prdt_img" alt="@i.prdt_name" width="100" height="120" />
+                </div></td>
+            <td>@Html.ActionLink("Edit", "Edit", "Product", new { @id = i.prdt_id }, new { htmlAttributes = new { @class = "btn btn-warning" } })</td>
             <td><a href="@Url.Action("Delete", "Product", new { @id = i.prdt_id})" class="btn btn-danger" onclick="return confirm('Are you sure you want to delete @i.prdt_name ?')">Delete</a></td>
-        </tr>   
+        </tr>
+
     }
 </table>
 <a href="@Url.Action("Create","Product")" class="btn btn-primary">Add New Product</a>
