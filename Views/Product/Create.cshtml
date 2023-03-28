@@ -1,0 +1,31 @@
+﻿@model CheckMVC.tblProduct
+@{
+    ViewBag.Title = "Create";
+}
+
+<h2>Add new Product</h2>
+
+@using (Html.BeginForm("Create", "Product", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    <table class="table">
+        <tr>
+            <td>Enter Product Name : </td>
+            <td>@Html.EditorFor(Model => Model.prdt_name, new { htmlAttributes = new { @class = "form-control" } })</td>
+        </tr>
+        <tr>
+            <td>Enter Product Price : </td>
+            <td>@Html.EditorFor(Model => Model.prdt_price, new { htmlAttributes = new { @class = "form-control" } })</td>
+        </tr>
+        <tr>
+            <td>Enter Product Quantity : </td>
+            <td>@Html.EditorFor(Model => Model.prdt_qty, new { htmlAttributes = new { @class = "form-control" } })</td>
+        </tr>
+        <tr>
+            <td>Choose Product Image : </td>
+            <td><input class="form-control" type="file" name="postedfile" /></td>
+        </tr>
+        <tr>
+            <td><input class="btn btn-success text-center" type="submit" name="submit" value="Add Product" /></td>
+        </tr>
+    </table>
+}
